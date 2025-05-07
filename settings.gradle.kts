@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "NewsShortsApp"
 include(":app")
+include(":utilities")

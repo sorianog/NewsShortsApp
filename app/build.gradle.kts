@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":utilities"))
 
     implementation(Dependencies.androidxCoreKtx)
     implementation(Dependencies.androidLifecycleRuntimeKtx)
