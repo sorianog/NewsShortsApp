@@ -66,6 +66,8 @@ dependencies {
     debugImplementation(Dependencies.androidxComposeUiTooling)
     debugImplementation(Dependencies.androidxComposeUiTestManifest)
 
+    // Maybe can rely on using libs.versions.toml instead?
+
 //    implementation(libs.androidx.core.ktx)
 //    implementation(libs.androidx.lifecycle.runtime.ktx)
 //    implementation(libs.androidx.activity.compose)

@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -21,8 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
-import com.sorianog.newsshortsapp.ui.components.AppNavigationGraph
+import com.sorianog.newsshortsapp.ui.navigation.AppNavigationGraph
 import com.sorianog.newsshortsapp.ui.theme.NewsShortsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,7 +37,8 @@ class MainActivity : ComponentActivity() {
                     topBar = { NewsTopAppBar(scrollBehavior = scrollBehavior) }
                 ) { innerPadding ->
                     Surface(
-                        modifier = Modifier.fillMaxSize()
+                        modifier = Modifier
+                            .fillMaxSize()
                             .padding(innerPadding),
                         color = Color.LightGray
                     ) {
