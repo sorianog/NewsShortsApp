@@ -4,6 +4,7 @@ import com.sorianog.newsshortsapp.data.AppConstants
 import com.sorianog.newsshortsapp.data.api.NewsApiService
 import com.sorianog.newsshortsapp.data.datasource.NewsDataSource
 import com.sorianog.newsshortsapp.data.datasource.NewsDataSourceImpl
+import com.sorianog.newsshortsapp.repository.NewsRepository
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -54,5 +55,11 @@ class AppModule {
     @Singleton
     fun providesNewsDataSource(apiService: NewsApiService): NewsDataSource {
         return NewsDataSourceImpl(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun providesNewsRepository(newsDataSource: NewsDataSource) : NewsRepository {
+        return NewsRepository(newsDataSource)
     }
 }
