@@ -59,6 +59,9 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.retrofit)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.moshi)
 
     androidTestImplementation(platform(Dependencies.androidxComposeBom))
     androidTestImplementation(Dependencies.androidxComposeUiTestJUnit4)
