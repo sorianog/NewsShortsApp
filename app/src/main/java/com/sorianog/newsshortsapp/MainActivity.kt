@@ -1,29 +1,50 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.sorianog.newsshortsapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.sorianog.newsshortsapp.ui.components.AppNavigationGraph
 import com.sorianog.newsshortsapp.ui.theme.NewsShortsAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             NewsShortsAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    topBar = { NewsTopAppBar(scrollBehavior = scrollBehavior) }
+                ) { innerPadding ->
+                    Surface(
+                        modifier = Modifier.fillMaxSize()
+                            .padding(innerPadding),
+                        color = Color.LightGray
+                    ) {
+                        AppEntryPoint()
+                    }
                 }
             }
         }
@@ -31,17 +52,20 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun AppEntryPoint() {
+    AppNavigationGraph()
 }
 
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    NewsShortsAppTheme {
-        Greeting("Android")
-    }
+fun NewsTopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
+    CenterAlignedTopAppBar(
+        scrollBehavior = scrollBehavior,
+        title = {
+            Text(
+                text = stringResource(R.string.app_name),
+                style = MaterialTheme.typography.headlineSmall,
+            )
+        },
+        modifier = modifier
+    )
 }

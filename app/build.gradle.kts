@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -39,6 +41,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
     implementation(project(":utilities"))
 
@@ -50,6 +56,9 @@ dependencies {
     implementation(Dependencies.androidxComposeUiGraphics)
     implementation(Dependencies.androidxComposeUiToolingPreview)
     implementation(Dependencies.androidxComposeMaterial3)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     androidTestImplementation(platform(Dependencies.androidxComposeBom))
     androidTestImplementation(Dependencies.androidxComposeUiTestJUnit4)
