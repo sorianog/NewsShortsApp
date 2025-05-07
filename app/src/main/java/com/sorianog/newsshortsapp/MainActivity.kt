@@ -39,8 +39,7 @@ class MainActivity : ComponentActivity() {
                     Surface(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(innerPadding),
-                        color = Color.LightGray
+                            .padding(innerPadding)
                     ) {
                         AppEntryPoint()
                     }
