@@ -2,6 +2,8 @@ package com.sorianog.newsshortsapp.di
 
 import com.sorianog.newsshortsapp.data.AppConstants
 import com.sorianog.newsshortsapp.data.api.NewsApiService
+import com.sorianog.newsshortsapp.data.datasource.NewsDataSource
+import com.sorianog.newsshortsapp.data.datasource.NewsDataSourceImpl
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -42,9 +44,15 @@ class AppModule {
             .build()
     }
 
-    @Singleton
     @Provides
-    fun providesApiService(retrofit: Retrofit) : NewsApiService {
+    @Singleton
+    fun providesApiService(retrofit: Retrofit): NewsApiService {
         return retrofit.create(NewsApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesNewsDataSource(apiService: NewsApiService): NewsDataSource {
+        return NewsDataSourceImpl(apiService)
     }
 }
