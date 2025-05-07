@@ -62,6 +62,10 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.moshi.kotlin)
     implementation(libs.converter.moshi)
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
 
     androidTestImplementation(platform(Dependencies.androidxComposeBom))
     androidTestImplementation(Dependencies.androidxComposeUiTestJUnit4)
