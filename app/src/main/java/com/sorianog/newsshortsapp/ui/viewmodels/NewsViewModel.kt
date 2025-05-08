@@ -35,8 +35,4 @@ class NewsViewModel @Inject constructor(
             }
         }
     }
-
-    companion object {
-        const val TAG = "NewsViewModel"
-    }
 }

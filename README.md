@@ -4,7 +4,8 @@ Android app built from a tutorial using modern tooling and practices
 **Video Tutorial:** https://www.youtube.com/watch?v=LFlobqW8Sy8
 
 ## Demo
-*to be added later*
+<img src="demo/app-screenshot.png" width="200"></img>
+<img src="demo/app-demo.gif" width="200"></img>
 
 ## Build tools & versions used
 - Macbook with an M-series chip

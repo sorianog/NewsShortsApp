@@ -66,6 +66,8 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
     androidTestImplementation(platform(Dependencies.androidxComposeBom))
     androidTestImplementation(Dependencies.androidxComposeUiTestJUnit4)
