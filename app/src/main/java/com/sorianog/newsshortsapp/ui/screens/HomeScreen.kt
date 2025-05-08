@@ -34,7 +34,6 @@ fun HomeScreen(
             is ResourceState.Success -> {
                 println("### success")
                 val response = (newsResponse as ResourceState.Success).data
-//                println("### news: ${response.articles}")
                 NewsList(response)
             }
 

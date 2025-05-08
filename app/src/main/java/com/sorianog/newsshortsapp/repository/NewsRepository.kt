@@ -13,7 +13,7 @@ class NewsRepository @Inject constructor(
     private val newsDataSource: NewsDataSource
 ) {
 
-    suspend fun getTopNewsHeadlines(country: String): Flow<ResourceState<TopHeadlinesResponse>> {
+    fun getTopNewsHeadlines(country: String): Flow<ResourceState<TopHeadlinesResponse>> {
         return flow {
             emit(ResourceState.Loading())
 

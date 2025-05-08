@@ -65,7 +65,7 @@ dependencies {
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
-
+    implementation(libs.androidx.core.splashscreen)
 
     androidTestImplementation(platform(Dependencies.androidxComposeBom))
     androidTestImplementation(Dependencies.androidxComposeUiTestJUnit4)
