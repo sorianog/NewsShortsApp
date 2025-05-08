@@ -9,6 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.sorianog.newsshortsapp.ui.components.LoadingIndicator
+import com.sorianog.newsshortsapp.ui.components.NewsList
 import com.sorianog.newsshortsapp.ui.viewmodels.NewsViewModel
 import com.sorianog.utilities.ResourceState
 
@@ -25,13 +27,19 @@ fun HomeScreen(
     ) {
         when (newsResponse) {
             is ResourceState.Loading -> {
-
+                println("### loading")
+                LoadingIndicator()
             }
+
             is ResourceState.Success -> {
-
+                println("### success")
+                val response = (newsResponse as ResourceState.Success).data
+//                println("### news: ${response.articles}")
+                NewsList(response)
             }
+
             is ResourceState.Error -> {
-                
+                print("### error")
             }
         }
     }

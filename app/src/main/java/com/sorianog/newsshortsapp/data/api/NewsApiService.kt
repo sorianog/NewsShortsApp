@@ -11,6 +11,6 @@ interface NewsApiService {
     @GET("v2/top-headlines")
     suspend fun getTopNewsHeadlines(
         @Query("country") country: String, // ex: "us"
-        @Query("apiKey") apiKey: String = "YOUR_API_KEy"
+        @Query("apiKey") apiKey: String = "YOUR_API_KEY"
     ) : Response<TopHeadlinesResponse>
 }

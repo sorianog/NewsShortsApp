@@ -18,7 +18,6 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.sorianog.newsshortsapp.ui.navigation.AppNavigationGraph
 import com.sorianog.newsshortsapp.ui.theme.NewsShortsAppTheme

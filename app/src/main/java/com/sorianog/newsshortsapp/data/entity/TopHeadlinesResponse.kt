@@ -8,8 +8,8 @@ data class TopHeadlinesResponse(
 )
 
 data class NewsSource(
-    var id: String,
-    var name: String
+    var id: String? = null,
+    var name: String? = null
 )
 
 data class Article(
