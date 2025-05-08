@@ -19,6 +19,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.sorianog.newsshortsapp.data.entity.Article
 import com.sorianog.newsshortsapp.data.entity.TopHeadlinesResponse
 
 @Composable
@@ -37,6 +38,14 @@ fun LoadingIndicator() {
             color = Color.Cyan
         )
     }
+}
+
+@Composable
+fun NewsRowComponent(
+    page: Int,
+    article: Article
+) {
+    TextComponent("$page \n\n ${article.title}")
 }
 
 @Composable
